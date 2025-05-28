@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap'); /*changes the style of the page*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  gap: 10px;
+  font-family: sans-serif;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body h2 {
+  color: rgb(25, 96, 155); 
+}
+
+body img.hero {
+  width: 100%;
+}
+
+day { 
+  margin: 1em;
+  gap: 10px;
+  padding: 0.5em;
+  border: 2px solid steelblue; 
+  background-color: rgb(223, 239, 233); 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; 
+}
+
+footer { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.container {
+  display: flex;
+  gap: 35px;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(25, 96, 155); 
+}
+.weather-input {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weather-input select {
+  font-size: 1.24rem; 
+  width: 100%; 
+}
+.weather-data {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+}
+.days-forecast .weather-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center; 
+}
+@media (max-width: 1400px) {
+  .weather-data .current-weather {
+    padding: 20px;
+  }
+  .weather-cards {
+    flex-wrap: wrap;
+  }
+  .weather-cards .card {
+    width: calc(100% / 4 - 15px);
+  }
+}

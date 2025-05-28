@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%230058ff%22></rect><path fill=%22%23fff%22 d=%22M72.15 21.33L72.15 21.33Q74.49 22.50 74.90 25.02Q75.30 27.54 73.59 29.61L73.59 29.61Q72.42 31.23 70.58 31.41Q68.73 31.59 66.84 30.69L66.84 30.69Q64.68 29.70 62.30 29.16Q59.91 28.62 57.30 28.62L57.30 28.62Q52.44 28.62 48.62 30.15Q44.79 31.68 42.09 34.52Q39.39 37.35 38.00 41.22Q36.60 45.09 36.60 49.77L36.60 49.77Q36.60 55.26 38.18 59.31Q39.75 63.36 42.54 66.06Q45.33 68.76 49.11 70.07Q52.89 71.37 57.30 71.37L57.30 71.37Q59.73 71.37 62.16 70.92Q64.59 70.47 66.84 69.30L66.84 69.30Q68.73 68.40 70.58 68.67Q72.42 68.94 73.68 70.56L73.68 70.56Q75.48 72.81 74.99 75.20Q74.49 77.58 72.24 78.66L72.24 78.66Q69.90 79.83 67.43 80.60Q64.95 81.36 62.43 81.77Q59.91 82.17 57.30 82.17L57.30 82.17Q50.82 82.17 45.02 80.10Q39.21 78.03 34.67 73.98Q30.12 69.93 27.51 63.86Q24.90 57.78 24.90 49.77L24.90 49.77Q24.90 42.84 27.29 36.99Q29.67 31.14 34.04 26.87Q38.40 22.59 44.34 20.21Q50.28 17.82 57.30 17.82L57.30 17.82Q61.26 17.82 65.04 18.72Q68.82 19.62 72.15 21.33Z%22></path></svg>" />
+<meta charset="UTF-8">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<!-- CSS Stylesheets -->
+<link rel="stylesheet" href="css/master.css">
+
+<style>
+  body  {
+    
+    background-color: #e0e1ff;
+  }
+</style>
+
+<title>API Project</title>
+</head>
+
+<body>
+
+  <img class="hero" src="images/banner.png" alt="banner">
+
+<h2 class="section-subheading">European Weather Forecast</h2>
+<p><code class="copyright-text">Powered by <a href="http://www.7timer.info/doc.php?lang=en" target="_blank" data-toggle="tooltip" data-placement="Top" title="" onclick="javascript:toolTipReset()" data-original-title="Tap to visit 7Timer!"><span class="keyword-magnet">7Timer!</span></a></code></p>
+
+
+<div class="container">
+  <div class="weather-input">
+    <h3>Select a City Name:</h3>
+    <select id="citySelected" onchange="getCityCoordinates()">
+      <option disabled="action" value="" selected="selected"> -- select a city -- </option> <!--It's selecting an unselectable option,why not.-->
+      <option value="Amsterdam 52.367 4.904">Amsterdam, Netherlands</option>
+      <option value="Ankara 39.933 32.859">Ankara, Turkey</option>
+      <option value="Athens 37.983 23.727">Athens, Greece</option>
+      <option value="Barcelona 41.387 2.168">Barcelona, Spain</option>
+      <option value="Belfast 54.597 -5.930">Belfast, Northern Ireland, UK</option>
+      <option value="Belgrade 44.787 20.457">Belgrade, Serbia</option>
+      <option value="Berlin 52.520 13.405">Berlin, Germany</option>
+      <option value="Bern 46.948 7.447">Bern, Switzerland</option>
+      <option value="Birmingham 52.486 -1.89">Birmingham, England, UK</option>
+      <option value="Brussels 50.847 4.357">Brussels, Belgium</option>
+      <option value="Bucharest 47.497 19.040">Bucharest, Romania</option>
+      <option value="Budapest 59.329 18.068">Budapest, Hungary</option>
+      <option value="Cardiff 51.483 -3.168">Cardiff, Wales, UK</option>
+      <option value="Chisinau 47.024 28.832">Chisinau, Moldova</option>
+      <option value="Cologne 50.937 6.96">Cologne, Germany</option>
+      <option value="Copenhagen 55.676 12.568">Copenhagen, Denmark</option>
+      <option value="Dublin 53.349 -6.260">Dublin, Ireland</option>
+      <option value="Edinburgh 55.953 -3.188">Edinburgh, Scotland, UK</option>
+      <option value="Florence 43.7696 11.255">Florence, Italy</option>
+      <option value="Frankfurt 50.110 8.682">Frankfurt, Germany</option>
+      <option value="French Riviera 43.254 6.637">French Riviera, France</option>
+      <option value="Gothenburg 57.708 11.974">Gothenburg, Sweden</option>
+      <option value="Hamburg 53.548 9.987">Hamburg, Germany</option>
+      <option value="Helsinki 60.169 24.938">Helsinki, Finland</option>
+      <option value="Ibiza 39.020 1.482">Ibiza, Spain</option>
+      <option value="Istanbul 41.015137 28.979">Istanbul, Turkey</option>
+      <option value="Kharkiv 49.988 36.232">Kharkiv, Ukraine</option>
+      <option value="Kyiv 50.450 30.523">Kyiv, Ukraine</option>
+      <option value="Las Palmas 28.150 -15.416">Las Palmas, Gran Canaria, Spain</option>
+      <option value="Lisbon 38.722 -9.139">Lisbon, Portugal</option>
+      <option value="Ljubljana 46.056 14.505">Ljubljana, Slovenia</option>
+      <option value="London 51.507 -0.127">London, England, UK</option>
+      <option value="Madrid 40.416 -3.703">Madrid, Spain</option>
+      <option value="Mallorca 39.695 3.017">Mallorca, Spain</option>
+      <option value="Manchester 53.480 -2.242">Manchester, England, UK</option>
+      <option value="Marseille 43.296 5.369">Marseille, France</option>
+      <option value="Milan 45.464 9.190">Milan, Italy</option>
+      <option value="Minsk 53.893 27.567">Minsk, Belarus</option>
+      <option value="Munich 48.135 11.582">Munich, Germany</option>
+      <option value="Moscow 55.751 37.618">Moscow, Russia</option>
+      <option value="Naples 40.851 14.268">Naples, Italy</option>
+      <option value="Oslo 59.913 10.752">Oslo, Norway</option>
+      <option value="Paris 48.856 2.352">Paris, France</option>
+      <option value="Podgorica 42.442 19.268">Podgorica, Montenegro</option>
+      <option value="Prague 50.075 14.437">Prague, Czech Republic</option>
+      <option value="Reykjavik 64.146 -21.942">Reykjavik, Iceland</option>
+      <option value="Riga 56.879 24.603">Riga, Latvia</option>
+      <option value="Rome 41.902 12.496">Rome, Italy</option>
+      <option value="Saint Petersburg 59.937 30.308">Saint Petersburg, Russia</option>
+      <option value="Tenerife 28.463 -16.251">Santa Cruz de Tenerife, Tenerife, Spain</option>
+      <option value="Sarajevo 43.856 18.413">Sarajevo, Bosnia and Herzegowina</option>
+      <option value="Skopje 41.996 21.431">Skopje, North Macedonia</option>
+      <option value="Sofia 42.697 23.321">Sofia, Bulgaria</option>
+      <option value="Stockholm 59.329 18.068">Stockholm, Sweden</option>
+      <option value="Tallin 59.437 24.753">Tallinn, Estonia</option>
+      <option value="Vienna 48.208 16.373">Vienna, Austria</option>
+      <option value="Vilnius 54.687 25.279">Vilnius, Lithuania</option>
+      <option value="Warsaw 52.229 21.012">Warsaw, Poland</option>
+      <option value="Zagreb 45.815, 15.96">Zagreb, Croatia</option>
+      <option value="Zurich 47.376 8.541">Zurich, Switzerland</option>
+    </select>
+  </div>
+  <div class="weather-data">
+    <div class="days-forecast">
+      <ul class="weather-cards">
+          
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<footer>
+  <p>© Copyright 2024 Alem Durakovic</p>
+  <div><a href="https://www.freepik.com/free-photo/ompass-tourist-map-focus-compass-needle_1203158.htm#query=europe%20map&position=23&from_view=search&track=ais&uuid=f3df0315-2ffc-47fa-aaef-e1f5535e7b61">Banner image by snowing</a> on Freepik</div>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+
+<!-- Our codes -->
+<script src="js/main.js"></script>
